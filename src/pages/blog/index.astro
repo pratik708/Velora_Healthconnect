@@ -49,7 +49,7 @@ function getReadingTime(body: string): number {
 
     {/* ===== FEATURED POST ===== */}
     {featuredPost && (
-      <a href={`/blog/${featuredPost.id}`} class="group block mb-16 md:mb-20">
+      <a href={`/Velora_Healthconnect/blog/${featuredPost.id}`} class="group block mb-16 md:mb-20">
         <article class="grid md:grid-cols-2 gap-8 md:gap-12 items-center rounded-3xl border border-border p-6 md:p-10 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-300">
           {/* Featured image */}
           <div class="aspect-[16/10] rounded-2xl bg-gradient-to-br from-[oklch(0.94_0.02_230)] to-[oklch(0.92_0.04_175)] overflow-hidden">
@@ -127,7 +127,7 @@ function getReadingTime(body: string): number {
     {remainingPosts.length > 0 && (
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {remainingPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="group block">
+          <a href={`/Velora_Healthconnect/blog/${post.id}`} class="group block">
             <article class="h-full flex flex-col rounded-2xl border border-border overflow-hidden hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
               {/* Card image */}
               <div class="aspect-[16/9] bg-gradient-to-br from-[oklch(0.95_0.01_230)] to-[oklch(0.93_0.03_175)] relative overflow-hidden">
@@ -212,7 +212,7 @@ function getReadingTime(body: string): number {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/contact"
+          href="/Velora_Healthconnect/contact"
           class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-white px-8 text-sm font-semibold text-primary shadow-sm transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] relative overflow-hidden"
         >
           Get in Touch

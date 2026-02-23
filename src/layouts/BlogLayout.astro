@@ -58,7 +58,7 @@ const relatedPosts = allPosts
     <div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <!-- Back link -->
       <a
-        href="/blog"
+        href="/Velora_Healthconnect/blog"
         class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" /></svg>
@@ -149,7 +149,7 @@ const relatedPosts = allPosts
         Our team of Australian-registered prescribers is here to provide trusted guidance and genuine follow-up care.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/contact" data-slot="button" data-variant="default" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-sm relative overflow-hidden">
+        <a href="/Velora_Healthconnect/contact" data-slot="button" data-variant="default" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-sm relative overflow-hidden">
           Book a Consultation
           <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
         </a>
@@ -172,7 +172,7 @@ const relatedPosts = allPosts
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {relatedPosts.map((post) => (
-            <a href={`/blog/${post.id}`} class="group block">
+            <a href={`/Velora_Healthconnect/blog/${post.id}`} class="group block">
               <article class="h-full flex flex-col rounded-2xl border border-border overflow-hidden hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
                 <div class="aspect-[16/9] bg-gradient-to-br from-[oklch(0.95_0.01_230)] to-[oklch(0.93_0.03_175)] relative overflow-hidden">
                   {post.data.image ? (
