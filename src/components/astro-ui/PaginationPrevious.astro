@@ -1,0 +1,27 @@
+---
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+
+interface Props {
+  class?: string;
+  href?: string;
+}
+
+const { class: className, href, ...props } = Astro.props;
+---
+
+<a
+  href={href}
+  aria-label="Go to previous page"
+  data-slot="pagination-link"
+  class={cn(
+    buttonVariants({ variant: "ghost", size: "default" }),
+    "gap-1 px-2.5 sm:pl-2.5",
+    className,
+  )}
+  {...props}
+>
+  <ChevronLeft className="size-4" />
+  <span class="hidden sm:block">Previous</span>
+</a>

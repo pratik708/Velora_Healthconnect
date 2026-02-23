@@ -1,0 +1,15 @@
+---
+import { TooltipProvider as ReactTooltipProvider } from "@/components/ui/tooltip";
+
+interface Props {
+  delayDuration?: number;
+  skipDelayDuration?: number;
+  disableHoverableContent?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactTooltipProvider client:visible {...props}>
+  <slot />
+</ReactTooltipProvider>

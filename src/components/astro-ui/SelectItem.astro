@@ -1,0 +1,15 @@
+---
+import { SelectItem as ReactSelectItem } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+  value: string;
+  disabled?: boolean;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectItem client:visible className={className} {...props}>
+  <slot />
+</ReactSelectItem>

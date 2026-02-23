@@ -1,0 +1,233 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "@components/common/Header.astro";
+import Footer from "@components/common/Footer.astro";
+import Badge from "@components/astro-ui/Badge.astro";
+import Button from "@components/astro-ui/Button.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { site } from "@/data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author: string;
+  image?: ImageMetadata;
+  tags?: string[];
+}
+
+const { title, description, pubDate, updatedDate, author, image, tags } =
+  Astro.props;
+
+// Get reading time estimate
+const slotContent = await Astro.slots.render("default");
+const wordCount = slotContent.replace(/<[^>]*>/g, "").split(/\s+/).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+// Get author initials
+const authorInitials = author
+  .split(" ")
+  .map((n) => n[0])
+  .join("")
+  .slice(0, 2);
+
+// Get related posts (same tags, excluding current)
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const currentTags = tags || [];
+const relatedPosts = allPosts
+  .filter((p) => p.data.title !== title)
+  .filter((p) => p.data.tags.some((t: string) => currentTags.includes(t)))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image?.src}
+  ogType="article"
+  canonical={Astro.url.href}
+>
+  <Header />
+
+  <!-- Article header -->
+  <section class="relative pt-12 pb-8 md:pt-20 md:pb-12 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[oklch(0.965_0.01_230)] via-white to-[oklch(0.96_0.015_175)]"></div>
+    <div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <!-- Back link -->
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" /></svg>
+        Back to blog
+      </a>
+
+      {/* Tags */}
+      {tags && tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-5">
+          {tags.map((tag) => (
+            <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <h1 class="font-heading text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-5xl leading-[1.15] mb-6">
+        {title}
+      </h1>
+
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        {description}
+      </p>
+
+      <!-- Author + meta -->
+      <div class="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-border">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-accent/10 flex items-center justify-center">
+            <span class="text-sm font-bold text-accent">{authorInitials}</span>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-primary">{author}</p>
+            <p class="text-xs text-muted-foreground">
+              <time datetime={pubDate.toISOString()}>
+                {pubDate.toLocaleDateString("en-AU", { dateStyle: "long" })}
+              </time>
+              {updatedDate && (
+                <span>
+                  {" "}&middot; Updated{" "}
+                  {updatedDate.toLocaleDateString("en-AU", { dateStyle: "long" })}
+                </span>
+              )}
+            </p>
+          </div>
+        </div>
+
+        <span class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          {readingTime} min read
+        </span>
+      </div>
+    </div>
+  </section>
+
+  {/* Hero image */}
+  {image && (
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-2 mb-10">
+      <Image
+        src={image}
+        alt={title}
+        class="w-full rounded-2xl shadow-lg"
+        width={900}
+        height={450}
+        loading="eager"
+      />
+    </div>
+  )}
+
+  <!-- Article body -->
+  <article
+    id="main-content"
+    class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10"
+  >
+    <div class="prose prose-neutral max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-primary prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-primary prose-a:text-accent prose-a:font-semibold hover:prose-a:text-accent/80 prose-blockquote:border-accent/30 prose-blockquote:text-muted-foreground prose-hr:border-border">
+      <slot />
+    </div>
+  </article>
+
+  <!-- Article footer -->
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pb-16">
+    <!-- Share / CTA bar -->
+    <div class="rounded-2xl bg-gradient-to-br from-[oklch(0.965_0.01_230)] to-[oklch(0.96_0.015_175)] p-8 text-center">
+      <h3 class="font-heading text-xl font-bold text-primary mb-3">
+        Ready to start your health journey?
+      </h3>
+      <p class="text-muted-foreground mb-6 max-w-lg mx-auto">
+        Our team of Australian-registered prescribers is here to provide trusted guidance and genuine follow-up care.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/contact" data-slot="button" data-variant="default" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-sm relative overflow-hidden">
+          Book a Consultation
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+        <a href={`tel:${site.contact.phone}`} data-slot="button" data-variant="outline" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full border border-border/60 bg-background px-8 text-sm font-semibold relative overflow-hidden">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          Call {site.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {/* Related posts */}
+  {relatedPosts.length > 0 && (
+    <section class="border-t border-border py-16 md:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Keep Reading</p>
+          <h2 class="font-heading text-2xl font-bold text-primary sm:text-3xl">Related articles</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {relatedPosts.map((post) => (
+            <a href={`/blog/${post.id}`} class="group block">
+              <article class="h-full flex flex-col rounded-2xl border border-border overflow-hidden hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
+                <div class="aspect-[16/9] bg-gradient-to-br from-[oklch(0.95_0.01_230)] to-[oklch(0.93_0.03_175)] relative overflow-hidden">
+                  {post.data.image ? (
+                    <Image
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width={400}
+                      height={225}
+                    />
+                  ) : (
+                    <div class="absolute inset-0 flex items-center justify-center text-accent/10">
+                      <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                  )}
+                  {post.data.tags[0] && (
+                    <div class="absolute top-3 left-3">
+                      <span class="rounded-full bg-white/90 backdrop-blur px-2.5 py-0.5 text-xs font-semibold text-primary shadow-sm">
+                        {post.data.tags[0]}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div class="flex flex-col flex-1 p-5">
+                  <h3 class="font-heading text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2 flex-1 mb-4">
+                    {post.data.description}
+                  </p>
+                  <p class="text-xs text-muted-foreground">
+                    {post.data.pubDate.toLocaleDateString("en-AU", { dateStyle: "medium" })}
+                  </p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: title,
+      description: description,
+      datePublished: pubDate.toISOString(),
+      dateModified: (updatedDate ?? pubDate).toISOString(),
+      author: { "@type": "Person", name: author },
+      image: image?.src ? new URL(image.src, Astro.site).toString() : undefined,
+    })}
+  />
+  <Footer />
+</BaseLayout>

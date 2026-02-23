@@ -1,0 +1,22 @@
+---
+import { Accordion as ReactAccordion } from "@/components/ui/accordion";
+
+interface Props {
+  type?: "single" | "multiple";
+  collapsible?: boolean;
+  class?: string;
+  defaultValue?: string | string[];
+}
+
+const {
+  type = "single",
+  collapsible = true,
+  class: className,
+  defaultValue,
+} = Astro.props;
+const accordionProps: any = { type, collapsible, className, defaultValue };
+---
+
+<ReactAccordion client:visible {...accordionProps}>
+  <slot />
+</ReactAccordion>

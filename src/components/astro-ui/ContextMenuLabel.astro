@@ -1,0 +1,14 @@
+---
+import { ContextMenuLabel as ReactContextMenuLabel } from "@/components/ui/context-menu";
+
+interface Props {
+  class?: string;
+  inset?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuLabel client:visible className={className} {...rest}>
+  <slot />
+</ReactContextMenuLabel>

@@ -1,0 +1,18 @@
+---
+import { DropdownMenuCheckboxItem as ReactDropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  class?: string;
+  checked?: boolean | "indeterminate";
+  onCheckedChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  onSelect?: (event: Event) => void;
+  textValue?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuCheckboxItem client:visible className={className} {...rest}>
+  <slot />
+</ReactDropdownMenuCheckboxItem>

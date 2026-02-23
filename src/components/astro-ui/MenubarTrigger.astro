@@ -1,0 +1,14 @@
+---
+import { MenubarTrigger as ReactMenubarTrigger } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  asChild?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarTrigger client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarTrigger>

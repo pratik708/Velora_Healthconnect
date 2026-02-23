@@ -1,0 +1,14 @@
+---
+import { CommandInput as ReactCommandInput } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+  placeholder?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandInput client:visible className={className} {...rest} />

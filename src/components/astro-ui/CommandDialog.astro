@@ -1,0 +1,18 @@
+---
+import { CommandDialog as ReactCommandDialog } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  title?: string;
+  description?: string;
+  showCloseButton?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandDialog client:visible className={className} {...rest}>
+  <slot />
+</ReactCommandDialog>

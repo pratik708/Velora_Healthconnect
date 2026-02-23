@@ -1,0 +1,16 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ul
+  data-slot="pagination-content"
+  class={cn("flex flex-row items-center gap-1", className)}
+>
+  <slot />
+</ul>

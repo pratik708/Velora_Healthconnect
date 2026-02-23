@@ -1,0 +1,19 @@
+---
+import { Switch as ReactSwitch } from "@/components/ui/switch";
+
+interface Props {
+  class?: string;
+  defaultChecked?: boolean;
+  checked?: boolean;
+  disabled?: boolean;
+  name?: string;
+  required?: boolean;
+  value?: string;
+  id?: string;
+  size?: "sm" | "default";
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSwitch client:visible className={className} {...props} />

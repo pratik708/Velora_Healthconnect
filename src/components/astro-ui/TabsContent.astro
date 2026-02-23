@@ -1,0 +1,14 @@
+---
+import { TabsContent as ReactTabsContent } from "@/components/ui/tabs";
+
+interface Props {
+  value: string;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactTabsContent client:visible className={className} {...props}>
+  <slot />
+</ReactTabsContent>

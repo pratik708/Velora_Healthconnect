@@ -1,0 +1,13 @@
+---
+import { InputOTPGroup as ReactInputOTPGroup } from "@/components/ui/input-otp";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ReactInputOTPGroup client:visible className={className}>
+  <slot />
+</ReactInputOTPGroup>

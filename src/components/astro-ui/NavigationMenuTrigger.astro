@@ -1,0 +1,14 @@
+---
+import { NavigationMenuTrigger as ReactNavigationMenuTrigger } from "@/components/ui/navigation-menu";
+
+interface Props {
+  class?: string;
+  asChild?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactNavigationMenuTrigger client:visible className={className} {...rest}>
+  <slot />
+</ReactNavigationMenuTrigger>

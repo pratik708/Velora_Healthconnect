@@ -1,0 +1,230 @@
+---
+import { cn } from "@/lib/utils";
+import { site } from "@/data/site";
+
+interface FooterLink {
+  name: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+interface Props {
+  class?: string;
+  sections?: FooterSection[];
+  companyName?: string;
+}
+
+const {
+  class: className,
+  sections = [
+    {
+      title: "Services",
+      links: [
+        { name: "Weight Management", href: "/services/weight-management" },
+        { name: "Peptide Therapy", href: "/services/peptide-therapy" },
+        { name: "Medical Cannabis", href: "/services/medical-cannabis" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About Us", href: "/about" },
+        { name: "How It Works", href: "/how-it-works" },
+        { name: "Blog", href: "/blog" },
+        { name: "FAQ", href: "/faq" },
+        { name: "Contact", href: "/contact" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" },
+      ],
+    },
+  ],
+  companyName = site.name,
+} = Astro.props;
+---
+
+<footer class={cn("relative overflow-hidden", className)}>
+  <!-- Top CTA band -->
+  <div class="bg-gradient-to-r from-accent to-[oklch(0.50_0.14_190)] relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,oklch(1_0_0/0.08),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,oklch(1_0_0/0.05),transparent_50%)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h3 class="font-heading text-2xl font-bold text-white sm:text-3xl mb-2">
+            Ready to take the next step?
+          </h3>
+          <p class="text-white/70 max-w-md">
+            Get in touch with our team for a confidential conversation about your health goals.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="/contact"
+            class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-white px-8 text-sm font-semibold text-primary shadow-sm transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+          >
+            Book a Consultation
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+          <a
+            href={`tel:${site.contact.phone}`}
+            class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full border border-white/25 px-8 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+            Call Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main footer -->
+  <div class="bg-primary relative">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,oklch(0.30_0.08_230/0.15),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_100%,oklch(0.30_0.06_175/0.1),transparent_50%)]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-20 md:pb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+
+        <!-- Brand column -->
+        <div class="lg:col-span-4">
+          <a href="/" class="inline-flex items-center gap-2.5 mb-6" aria-label={site.name}>
+            <svg class="h-10 w-10 shrink-0" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="24" r="19" fill="oklch(0.55 0.12 175)" opacity="0.15"/>
+              <path d="M10 10L20 38L30 10" stroke="oklch(0.65 0.14 175)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 22L16 22L17.5 17L20 29L22.5 17L24 22L27 22" stroke="oklch(0.65 0.14 175)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="flex items-baseline gap-0.5 text-xl tracking-tight">
+              <span class="font-heading font-extrabold text-white">Velora</span>
+              <span class="font-heading font-medium text-white/45">Health</span>
+              <span class="font-heading font-semibold text-accent">Connect</span>
+            </span>
+          </a>
+          <p class="text-white/50 text-sm leading-relaxed mb-8 max-w-xs">
+            Trusted telehealth guidance for weight management, peptide therapy, and medical cannabis. Genuine follow-up care across Australia.
+          </p>
+
+          <!-- Contact cards -->
+          <div class="space-y-3">
+            <a href={`mailto:${site.contact.email}`} class="flex items-center gap-3 group/contact">
+              <div class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center group-hover/contact:bg-accent/20 transition-colors">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              </div>
+              <span class="text-sm text-white/60 group-hover/contact:text-white/80 transition-colors">{site.contact.email}</span>
+            </a>
+            <a href={`tel:${site.contact.phone}`} class="flex items-center gap-3 group/contact">
+              <div class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center group-hover/contact:bg-accent/20 transition-colors">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+              </div>
+              <span class="text-sm text-white/60 group-hover/contact:text-white/80 transition-colors">{site.contact.phoneDisplay}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        {
+          sections.map((section) => (
+            <div class="lg:col-span-2">
+              <h4 class="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-5">
+                {section.title}
+              </h4>
+              <ul class="space-y-3">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="group/link inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-accent transition-colors duration-200"
+                    >
+                      <span class="w-0 h-px bg-accent transition-all duration-200 group-hover/link:w-3"></span>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+
+        <!-- Hours / Trust column -->
+        <div class="lg:col-span-2">
+          <h4 class="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-5">
+            Availability
+          </h4>
+          <div class="space-y-3 text-sm text-white/50 mb-8">
+            <div class="flex justify-between">
+              <span>Mon - Fri</span>
+              <span class="text-white/70">9am - 5pm AEST</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Saturday</span>
+              <span class="text-white/70">By appointment</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Sunday</span>
+              <span class="text-white/70">Closed</span>
+            </div>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap gap-2">
+            <div class="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1.5">
+              <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+              <span class="text-xs text-white/60">TGA Compliant</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1.5">
+              <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+              <span class="text-xs text-white/60">AHPRA Registered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mt-14 mb-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <!-- Social icons -->
+        <div class="flex items-center gap-3">
+          <a href={site.social.instagram} aria-label="Instagram" class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-all duration-200 hover:-translate-y-0.5 group/social">
+            <svg class="size-4 text-white/40 group-hover/social:text-accent transition-colors" fill="currentColor" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+          </a>
+          <a href={site.social.facebook} aria-label="Facebook" class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-all duration-200 hover:-translate-y-0.5 group/social">
+            <svg class="size-4 text-white/40 group-hover/social:text-accent transition-colors" fill="currentColor" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-56.6v-78.2h56.6v-61.3c0-56.4 33.5-87.3 84.6-87.3 24.5 0 50.2 4.4 50.2 4.4v55.4h-28.3c-27.8 0-36.5 17.3-36.5 35v42h62.3l-10 78.2h-52.3v170.3C429.3 476.8 512 376 512 256z"></path></svg>
+          </a>
+          <a href={site.social.twitter} aria-label="X (Twitter)" class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-all duration-200 hover:-translate-y-0.5 group/social">
+            <svg class="size-4 text-white/40 group-hover/social:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          </a>
+          <a href={site.social.linkedin} aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-all duration-200 hover:-translate-y-0.5 group/social">
+            <svg class="size-4 text-white/40 group-hover/social:text-accent transition-colors" fill="currentColor" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zM384.3 416h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+          </a>
+        </div>
+
+        <!-- Copyright + credit -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-xs text-white/30">
+          <p>&copy; {new Date().getFullYear()} {companyName}. All rights reserved.</p>
+          <span class="hidden sm:inline text-white/10">|</span>
+          <p>
+            Made by{" "}
+            <a
+              href="https://medicalmarketinggroup.com.au"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              class="text-white/50 hover:text-accent transition-colors"
+            >
+              Medical Marketing Group
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

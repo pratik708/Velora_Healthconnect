@@ -1,0 +1,17 @@
+---
+import { ContextMenuRadioItem as ReactContextMenuRadioItem } from "@/components/ui/context-menu";
+
+interface Props {
+  class?: string;
+  value: string;
+  disabled?: boolean;
+  onSelect?: (event: Event) => void;
+  textValue?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuRadioItem client:visible className={className} {...rest}>
+  <slot />
+</ReactContextMenuRadioItem>

@@ -1,0 +1,14 @@
+---
+import { AccordionItem as ReactAccordionItem } from "@/components/ui/accordion";
+
+interface Props {
+  value: string;
+  class?: string;
+}
+
+const { value, class: className } = Astro.props;
+---
+
+<ReactAccordionItem client:visible value={value} className={className}>
+  <slot />
+</ReactAccordionItem>

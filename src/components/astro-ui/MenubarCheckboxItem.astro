@@ -1,0 +1,18 @@
+---
+import { MenubarCheckboxItem as ReactMenubarCheckboxItem } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  checked?: boolean | "indeterminate";
+  onCheckedChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  onSelect?: (event: Event) => void;
+  textValue?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarCheckboxItem client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarCheckboxItem>

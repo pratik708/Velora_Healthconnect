@@ -1,0 +1,15 @@
+---
+import { DropdownMenuSub as ReactDropdownMenuSub } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const props = Astro.props;
+---
+
+<ReactDropdownMenuSub client:visible {...props}>
+  <slot />
+</ReactDropdownMenuSub>

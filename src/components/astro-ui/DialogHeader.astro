@@ -1,0 +1,13 @@
+---
+import { DialogHeader as ReactDialogHeader } from "@/components/ui/dialog";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDialogHeader client:load className={className} {...rest}>
+  <slot />
+</ReactDialogHeader>

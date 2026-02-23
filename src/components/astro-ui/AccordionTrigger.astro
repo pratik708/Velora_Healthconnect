@@ -1,0 +1,13 @@
+---
+import { AccordionTrigger as ReactAccordionTrigger } from "@/components/ui/accordion";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ReactAccordionTrigger client:visible className={className}>
+  <slot />
+</ReactAccordionTrigger>

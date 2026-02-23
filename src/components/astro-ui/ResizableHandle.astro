@@ -1,0 +1,16 @@
+---
+import { ResizableHandle as ReactResizableHandle } from "@/components/ui/resizable";
+
+interface Props {
+  class?: string;
+  withHandle?: boolean;
+}
+
+const { class: className, withHandle = false } = Astro.props;
+---
+
+<ReactResizableHandle
+  client:visible
+  className={className}
+  withHandle={withHandle}
+/>

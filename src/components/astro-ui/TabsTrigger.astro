@@ -1,0 +1,15 @@
+---
+import { TabsTrigger as ReactTabsTrigger } from "@/components/ui/tabs";
+
+interface Props {
+  value: string;
+  disabled?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactTabsTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactTabsTrigger>

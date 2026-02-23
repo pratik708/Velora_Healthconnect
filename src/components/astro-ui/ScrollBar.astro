@@ -1,0 +1,16 @@
+---
+import { ScrollBar as ReactScrollBar } from "@/components/ui/scroll-area";
+
+interface Props {
+  class?: string;
+  orientation?: "vertical" | "horizontal";
+}
+
+const { class: className, orientation = "vertical" } = Astro.props;
+---
+
+<ReactScrollBar
+  client:visible
+  className={className}
+  orientation={orientation}
+/>

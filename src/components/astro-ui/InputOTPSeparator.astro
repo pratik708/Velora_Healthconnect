@@ -1,0 +1,11 @@
+---
+import { InputOTPSeparator as ReactInputOTPSeparator } from "@/components/ui/input-otp";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ReactInputOTPSeparator client:visible className={className} />

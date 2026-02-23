@@ -1,0 +1,14 @@
+---
+import { DialogTrigger as ReactDialogTrigger } from "@/components/ui/dialog";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDialogTrigger client:load className={className} {...rest}>
+  <slot />
+</ReactDialogTrigger>

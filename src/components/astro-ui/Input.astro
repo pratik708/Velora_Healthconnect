@@ -1,0 +1,42 @@
+---
+import { cn } from "@/lib/utils";
+
+type InputType =
+  | "text"
+  | "email"
+  | "password"
+  | "number"
+  | "tel"
+  | "url"
+  | "search"
+  | "date"
+  | "time"
+  | "datetime-local"
+  | "month"
+  | "week"
+  | "color"
+  | "file"
+  | "hidden";
+
+interface Props {
+  class?: string;
+  type?: InputType;
+  placeholder?: string;
+  name?: string;
+  id?: string;
+  required?: boolean;
+  disabled?: boolean;
+  value?: string;
+}
+
+const { class: className, type = "text", ...props } = Astro.props;
+---
+
+<input
+  type={type}
+  class={cn(
+    "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+    className,
+  )}
+  {...props}
+/>

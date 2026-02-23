@@ -1,0 +1,13 @@
+---
+import { CarouselItem as ReactCarouselItem } from "@/components/ui/carousel";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ReactCarouselItem client:visible className={className}>
+  <slot />
+</ReactCarouselItem>

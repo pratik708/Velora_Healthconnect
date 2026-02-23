@@ -1,0 +1,23 @@
+---
+import { MenubarSubContent as ReactMenubarSubContent } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  sideOffset?: number;
+  alignOffset?: number;
+  avoidCollisions?: boolean;
+  collisionBoundary?: Element | Element[] | null;
+  collisionPadding?:
+    | number
+    | { top?: number; right?: number; bottom?: number; left?: number };
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+  forceMount?: true;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarSubContent client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarSubContent>

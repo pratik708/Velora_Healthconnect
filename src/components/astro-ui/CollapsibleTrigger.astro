@@ -1,0 +1,14 @@
+---
+import { CollapsibleTrigger as ReactCollapsibleTrigger } from "@/components/ui/collapsible";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactCollapsibleTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactCollapsibleTrigger>

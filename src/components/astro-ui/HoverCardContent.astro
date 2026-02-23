@@ -1,0 +1,16 @@
+---
+import { HoverCardContent as ReactHoverCardContent } from "@/components/ui/hover-card";
+
+interface Props {
+  align?: "start" | "center" | "end";
+  side?: "top" | "right" | "bottom" | "left";
+  sideOffset?: number;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactHoverCardContent client:visible className={className} {...props}>
+  <slot />
+</ReactHoverCardContent>

@@ -1,0 +1,13 @@
+---
+import { ContextMenuShortcut as ReactContextMenuShortcut } from "@/components/ui/context-menu";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuShortcut client:visible className={className} {...rest}>
+  <slot />
+</ReactContextMenuShortcut>

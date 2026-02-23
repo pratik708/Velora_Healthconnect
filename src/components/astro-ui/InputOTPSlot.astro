@@ -1,0 +1,12 @@
+---
+import { InputOTPSlot as ReactInputOTPSlot } from "@/components/ui/input-otp";
+
+interface Props {
+  class?: string;
+  index: number;
+}
+
+const { class: className, index } = Astro.props;
+---
+
+<ReactInputOTPSlot client:visible className={className} index={index} />

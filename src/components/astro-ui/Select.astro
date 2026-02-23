@@ -1,0 +1,19 @@
+---
+import { Select as ReactSelect } from "@/components/ui/select";
+
+interface Props {
+  defaultValue?: string;
+  value?: string;
+  defaultOpen?: boolean;
+  open?: boolean;
+  disabled?: boolean;
+  name?: string;
+  required?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactSelect client:visible {...props}>
+  <slot />
+</ReactSelect>

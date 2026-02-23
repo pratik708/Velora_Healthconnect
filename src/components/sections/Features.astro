@@ -1,0 +1,68 @@
+---
+import { cn } from "@/lib/utils";
+import Card from "@components/astro-ui/Card.astro";
+import CardHeader from "@components/astro-ui/CardHeader.astro";
+import CardTitle from "@components/astro-ui/CardTitle.astro";
+import CardDescription from "@components/astro-ui/CardDescription.astro";
+
+interface Feature {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+  columns?: 2 | 3 | 4;
+}
+
+const {
+  class: className,
+  title,
+  subtitle,
+  features,
+  columns = 3,
+} = Astro.props;
+
+const columnClasses = {
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-2 lg:grid-cols-3",
+  4: "md:grid-cols-2 lg:grid-cols-4",
+};
+---
+
+<section class={cn("py-16 md:py-24", className)}>
+  <div class="mx-auto max-w-7xl px-4">
+    {
+      (title || subtitle) && (
+        <div class="mb-12 text-center">
+          {title && (
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p class="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+          )}
+        </div>
+      )
+    }
+
+    <div class={cn("grid gap-6", columnClasses[columns])}>
+      {
+        features.map((feature) => (
+          <Card>
+            <CardHeader>
+              {feature.icon && <div class="mb-2 text-2xl">{feature.icon}</div>}
+              <CardTitle>{feature.title}</CardTitle>
+              <CardDescription>{feature.description}</CardDescription>
+            </CardHeader>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

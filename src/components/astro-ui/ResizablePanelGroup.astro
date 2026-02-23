@@ -1,0 +1,16 @@
+---
+import { ResizablePanelGroup as ReactResizablePanelGroup } from "@/components/ui/resizable";
+
+interface Props {
+  class?: string;
+  direction?: "horizontal" | "vertical";
+  autoSaveId?: string;
+}
+
+const { class: className, direction = "horizontal", autoSaveId } = Astro.props;
+const groupProps: any = { className, direction, autoSaveId };
+---
+
+<ReactResizablePanelGroup client:visible {...groupProps}>
+  <slot />
+</ReactResizablePanelGroup>

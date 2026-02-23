@@ -1,0 +1,13 @@
+---
+import { SelectGroup as ReactSelectGroup } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectGroup client:visible className={className} {...props}>
+  <slot />
+</ReactSelectGroup>

@@ -1,0 +1,21 @@
+---
+import { NavigationMenu as ReactNavigationMenu } from "@/components/ui/navigation-menu";
+
+interface Props {
+  class?: string;
+  defaultValue?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
+  delayDuration?: number;
+  skipDelayDuration?: number;
+  dir?: "ltr" | "rtl";
+  orientation?: "horizontal" | "vertical";
+  viewport?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactNavigationMenu client:visible className={className} {...rest}>
+  <slot />
+</ReactNavigationMenu>

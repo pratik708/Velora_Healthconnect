@@ -1,0 +1,11 @@
+---
+import { DropdownMenuSeparator as ReactDropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuSeparator client:visible className={className} {...rest} />

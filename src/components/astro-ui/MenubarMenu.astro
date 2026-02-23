@@ -1,0 +1,13 @@
+---
+import { MenubarMenu as ReactMenubarMenu } from "@/components/ui/menubar";
+
+interface Props {
+  value?: string;
+}
+
+const props = Astro.props;
+---
+
+<ReactMenubarMenu client:visible {...props}>
+  <slot />
+</ReactMenubarMenu>

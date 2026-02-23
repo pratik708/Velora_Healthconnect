@@ -1,0 +1,9 @@
+---
+import { ContextMenuGroup as ReactContextMenuGroup } from "@/components/ui/context-menu";
+
+const props = Astro.props;
+---
+
+<ReactContextMenuGroup client:visible {...props}>
+  <slot />
+</ReactContextMenuGroup>

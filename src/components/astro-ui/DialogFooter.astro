@@ -1,0 +1,14 @@
+---
+import { DialogFooter as ReactDialogFooter } from "@/components/ui/dialog";
+
+interface Props {
+  class?: string;
+  showCloseButton?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDialogFooter client:load className={className} {...rest}>
+  <slot />
+</ReactDialogFooter>

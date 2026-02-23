@@ -1,0 +1,20 @@
+---
+import { Slider as ReactSlider } from "@/components/ui/slider";
+
+interface Props {
+  class?: string;
+  defaultValue?: number[];
+  value?: number[];
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
+  name?: string;
+  orientation?: "horizontal" | "vertical";
+  inverted?: boolean;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSlider client:visible className={className} {...props} />

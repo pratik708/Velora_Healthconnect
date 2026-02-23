@@ -1,0 +1,14 @@
+---
+import { PopoverTrigger as ReactPopoverTrigger } from "@/components/ui/popover";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactPopoverTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactPopoverTrigger>

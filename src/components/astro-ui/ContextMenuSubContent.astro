@@ -1,0 +1,23 @@
+---
+import { ContextMenuSubContent as ReactContextMenuSubContent } from "@/components/ui/context-menu";
+
+interface Props {
+  class?: string;
+  sideOffset?: number;
+  alignOffset?: number;
+  avoidCollisions?: boolean;
+  collisionBoundary?: Element | Element[] | null;
+  collisionPadding?:
+    | number
+    | { top?: number; right?: number; bottom?: number; left?: number };
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+  forceMount?: true;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuSubContent client:visible className={className} {...rest}>
+  <slot />
+</ReactContextMenuSubContent>

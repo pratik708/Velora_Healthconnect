@@ -1,0 +1,16 @@
+---
+import { NavigationMenuLink as ReactNavigationMenuLink } from "@/components/ui/navigation-menu";
+
+interface Props {
+  class?: string;
+  asChild?: boolean;
+  active?: boolean;
+  onSelect?: (event: Event) => void;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactNavigationMenuLink client:visible className={className} {...rest}>
+  <slot />
+</ReactNavigationMenuLink>

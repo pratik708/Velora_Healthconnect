@@ -1,0 +1,13 @@
+---
+import { DialogDescription as ReactDialogDescription } from "@/components/ui/dialog";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDialogDescription client:load className={className} {...rest}>
+  <slot />
+</ReactDialogDescription>

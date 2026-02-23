@@ -1,0 +1,11 @@
+---
+import { SelectSeparator as ReactSelectSeparator } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectSeparator client:visible className={className} {...props} />

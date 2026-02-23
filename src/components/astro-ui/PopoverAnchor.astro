@@ -1,0 +1,14 @@
+---
+import { PopoverAnchor as ReactPopoverAnchor } from "@/components/ui/popover";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactPopoverAnchor client:visible className={className} {...props}>
+  <slot />
+</ReactPopoverAnchor>

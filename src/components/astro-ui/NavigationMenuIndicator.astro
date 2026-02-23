@@ -1,0 +1,14 @@
+---
+import { NavigationMenuIndicator as ReactNavigationMenuIndicator } from "@/components/ui/navigation-menu";
+
+interface Props {
+  class?: string;
+  forceMount?: true;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactNavigationMenuIndicator client:visible className={className} {...rest}>
+  <slot />
+</ReactNavigationMenuIndicator>

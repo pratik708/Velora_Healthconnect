@@ -1,0 +1,25 @@
+---
+import { ToggleGroupItem as ReactToggleGroupItem } from "@/components/ui/toggle-group";
+import type { VariantProps } from "class-variance-authority";
+import { toggleVariants } from "@/components/ui/toggle";
+
+type ToggleVariants = VariantProps<typeof toggleVariants>;
+
+interface Props extends ToggleVariants {
+  class?: string;
+  value: string;
+  disabled?: boolean;
+}
+
+const { class: className, variant, size, ...props } = Astro.props;
+---
+
+<ReactToggleGroupItem
+  client:visible
+  className={className}
+  variant={variant}
+  size={size}
+  {...props}
+>
+  <slot />
+</ReactToggleGroupItem>

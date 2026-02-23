@@ -1,0 +1,23 @@
+---
+import { ToggleGroup as ReactToggleGroup } from "@/components/ui/toggle-group";
+import type { VariantProps } from "class-variance-authority";
+import { toggleVariants } from "@/components/ui/toggle";
+
+type ToggleVariants = VariantProps<typeof toggleVariants>;
+
+interface Props extends ToggleVariants {
+  class?: string;
+  type: "single" | "multiple";
+  defaultValue?: string | string[];
+  value?: string | string[];
+  disabled?: boolean;
+  orientation?: "horizontal" | "vertical";
+}
+
+const { class: className, variant, size, ...rest } = Astro.props;
+const groupProps: any = { className, variant, size, ...rest };
+---
+
+<ReactToggleGroup client:visible {...groupProps}>
+  <slot />
+</ReactToggleGroup>

@@ -1,0 +1,87 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-no-unsupported-browser-features"],
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "theme",
+          "plugin",
+          "utility",
+          "variant",
+          "custom-variant",
+          "source",
+          "tailwind",
+          "apply",
+          "layer",
+          "config"
+        ]
+      }
+    ],
+    "import-notation": null,
+    "lightness-notation": null,
+    "hue-degree-notation": null,
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "color-hex-length": null,
+    "media-feature-range-notation": null,
+    "value-keyword-case": null,
+    "declaration-block-single-line-max-declarations": null,
+    "number-max-precision": 6,
+    "selector-not-notation": null,
+    "shorthand-property-no-redundant-values": true,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "text-size-adjust",
+          "mask-image",
+          "overflow-scrolling",
+          "tap-highlight-color",
+          "box-orient",
+          "backdrop-filter",
+          "background-clip"
+        ]
+      }
+    ],
+    "property-no-deprecated": [
+      true,
+      {
+        "ignoreProperties": ["clip"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "warning",
+        "ignore": ["css-nesting", "css-cascade-layers"]
+      }
+    ]
+  },
+  "ignoreFiles": ["dist/**", "node_modules/**"]
+}

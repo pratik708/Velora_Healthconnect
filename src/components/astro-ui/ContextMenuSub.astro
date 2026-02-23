@@ -1,0 +1,15 @@
+---
+import { ContextMenuSub as ReactContextMenuSub } from "@/components/ui/context-menu";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const props = Astro.props;
+---
+
+<ReactContextMenuSub client:visible {...props}>
+  <slot />
+</ReactContextMenuSub>

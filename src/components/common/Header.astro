@@ -1,0 +1,13 @@
+---
+import Navbar from "@components/navbar.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<header class:list={["sticky top-0 z-40 w-full", className]} id="site-header">
+  <Navbar />
+</header>

@@ -1,0 +1,15 @@
+---
+import { SheetContent as ReactSheetContent } from "@/components/ui/sheet";
+
+interface Props {
+  class?: string;
+  side?: "top" | "right" | "bottom" | "left";
+  showCloseButton?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetContent client:load className={className} {...rest}>
+  <slot />
+</ReactSheetContent>

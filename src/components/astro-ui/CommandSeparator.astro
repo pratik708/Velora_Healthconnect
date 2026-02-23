@@ -1,0 +1,12 @@
+---
+import { CommandSeparator as ReactCommandSeparator } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+  alwaysRender?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandSeparator client:visible className={className} {...rest} />

@@ -1,0 +1,319 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/sections/Section.astro";
+import Button from "@components/astro-ui/Button.astro";
+import Badge from "@components/astro-ui/Badge.astro";
+import { site } from "@/data/site";
+---
+
+<PageLayout
+  title="How It Works"
+  description="Learn how Velora HealthConnect works — from your first enquiry through to ongoing follow-up care. Four simple steps to better health with Australia's trusted telehealth provider."
+>
+  <!-- ===== HERO ===== -->
+  <section class="relative pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[oklch(0.965_0.01_230)] via-white to-[oklch(0.96_0.015_175)]"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <Badge variant="secondary" class="mb-6 bg-[oklch(0.92_0.03_175)] text-[oklch(0.30_0.06_175)]">
+        How It Works
+      </Badge>
+      <h1 class="font-heading text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl mb-6">
+        Your path to better health,<br class="hidden sm:block" />
+        <span class="text-accent">step by step</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
+        From your first enquiry through to ongoing care, we make the process straightforward and supportive. No complexity, no confusion — just trusted medical guidance.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOUR STEPS (DETAILED) ===== -->
+  <Section id="steps" padding="lg">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Step 1 -->
+      <div class="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10 mb-16 md:mb-20">
+        <div class="flex md:flex-col items-center md:items-center gap-4 md:gap-0">
+          <div class="w-16 h-16 rounded-2xl bg-white border-2 border-accent/20 flex items-center justify-center shadow-sm flex-shrink-0">
+            <span class="font-heading text-2xl font-bold text-accent">1</span>
+          </div>
+          <div class="hidden md:block w-0.5 h-full bg-gradient-to-b from-accent/20 to-accent/5 mx-auto mt-4"></div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-primary sm:text-3xl mb-4">Submit Your Enquiry</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Start by completing a brief online form. This gives us a clear picture of your health goals, medical history, and the treatment area you are interested in — whether that is weight management, peptide therapy, or medical cannabis.
+          </p>
+          <div class="rounded-2xl border border-border p-6 bg-secondary/30">
+            <h3 class="font-heading font-bold text-primary mb-4">What to expect:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Takes approximately 5 minutes to complete</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>All information is kept strictly confidential</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>No obligation — submitting an enquiry does not commit you to treatment</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Our team reviews your enquiry and contacts you to schedule a consultation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10 mb-16 md:mb-20">
+        <div class="flex md:flex-col items-center md:items-center gap-4 md:gap-0">
+          <div class="w-16 h-16 rounded-2xl bg-white border-2 border-accent/20 flex items-center justify-center shadow-sm flex-shrink-0">
+            <span class="font-heading text-2xl font-bold text-accent">2</span>
+          </div>
+          <div class="hidden md:block w-0.5 h-full bg-gradient-to-b from-accent/20 to-accent/5 mx-auto mt-4"></div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-primary sm:text-3xl mb-4">Doctor Consultation</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            You will be matched with an Australian-registered prescriber who specialises in your chosen treatment area. Your consultation takes place via secure telehealth — video or phone call — at a time that suits you.
+          </p>
+          <div class="rounded-2xl border border-border p-6 bg-secondary/30">
+            <h3 class="font-heading font-bold text-primary mb-4">During your consultation:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Your prescriber reviews your health history and current goals</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Clinical suitability is assessed thoroughly — we never rush</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Treatment options, risks, and benefits are explained clearly</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You have full opportunity to ask questions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10 mb-16 md:mb-20">
+        <div class="flex md:flex-col items-center md:items-center gap-4 md:gap-0">
+          <div class="w-16 h-16 rounded-2xl bg-white border-2 border-accent/20 flex items-center justify-center shadow-sm flex-shrink-0">
+            <span class="font-heading text-2xl font-bold text-accent">3</span>
+          </div>
+          <div class="hidden md:block w-0.5 h-full bg-gradient-to-b from-accent/20 to-accent/5 mx-auto mt-4"></div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-primary sm:text-3xl mb-4">Receive Your Treatment</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            If your prescriber determines that treatment is clinically appropriate, your prescription is processed and your medication is dispatched directly to your door. We walk you through everything — dosage, timing, what to monitor, and what to expect.
+          </p>
+          <div class="rounded-2xl border border-border p-6 bg-secondary/30">
+            <h3 class="font-heading font-bold text-primary mb-4">What happens next:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Prescription is filled by a licensed Australian pharmacy</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Discreet delivery directly to your home</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Clear guidance on how to begin your treatment safely</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Our support team is available if you have any questions once you start</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 (highlighted) -->
+      <div class="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10">
+        <div class="flex md:flex-col items-center md:items-center gap-4 md:gap-0">
+          <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center shadow-sm shadow-accent/20 flex-shrink-0">
+            <span class="font-heading text-2xl font-bold text-white">4</span>
+          </div>
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 mb-4">
+            <h2 class="font-heading text-2xl font-bold text-primary sm:text-3xl">Ongoing Follow-Up Care</h2>
+            <Badge variant="secondary" class="bg-accent/10 text-accent">What sets us apart</Badge>
+          </div>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            This is where Velora HealthConnect stands apart from other telehealth providers. We do not stop at the prescription. Every patient receives scheduled follow-up appointments, access to a dedicated support team, and ongoing treatment monitoring to ensure real, lasting results.
+          </p>
+          <div class="rounded-2xl border-2 border-accent/20 p-6 bg-accent/5">
+            <h3 class="font-heading font-bold text-primary mb-4">Your ongoing care includes:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong class="text-primary">Scheduled check-ins</strong> — Regular appointments with your prescriber to review progress and adjust treatment</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong class="text-primary">Dosage adjustments</strong> — Treatment is optimised based on your response and progress</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong class="text-primary">Dedicated support team</strong> — Real people available by phone or email between appointments</span>
+              </li>
+              <li class="flex items-start gap-3 text-muted-foreground">
+                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong class="text-primary">Outcome tracking</strong> — We monitor your health journey and proactively adjust your care plan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Section>
+
+  <!-- ===== WHAT YOU NEED ===== -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-[oklch(0.975_0.005_230/0.5)] to-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">Before You Start</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+          What you will need for your consultation
+        </h2>
+        <p class="text-lg text-muted-foreground">
+          To ensure your consultation is as productive as possible, have the following ready.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="rounded-2xl border border-border p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Valid Photo ID</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            A current Australian driver's licence, passport, or other government-issued photo identification.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-border p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Medical History</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            A list of current medications, known allergies, and any relevant medical conditions or previous treatments.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-border p-6 text-center sm:col-span-2 lg:col-span-1">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Quiet Space & Device</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            A private area with a reliable internet connection and a device with camera and microphone for your video consultation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <Section id="faq" padding="lg">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">FAQs</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+          Common questions about the process
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group rounded-2xl border border-border overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="font-heading font-semibold text-primary pr-4">How long does a consultation take?</h3>
+            <svg class="w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+            Initial consultations typically last 15 to 30 minutes, depending on your treatment area and complexity. We never rush — your prescriber will take the time needed to properly assess your suitability and answer all your questions.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-border overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="font-heading font-semibold text-primary pr-4">What if I am not approved for treatment?</h3>
+            <svg class="w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+            Not every patient will be clinically suitable for every treatment. If your prescriber determines that a particular treatment is not appropriate for you, they will explain why and, where possible, recommend alternative options or refer you to another healthcare provider.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-border overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="font-heading font-semibold text-primary pr-4">How quickly will I receive my medication?</h3>
+            <svg class="w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+            Once approved, prescriptions are processed promptly. Delivery times depend on your location and the specific medication, but most patients receive their treatment within a few business days. We will keep you informed throughout the process.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-border overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="font-heading font-semibold text-primary pr-4">How often are follow-up appointments?</h3>
+            <svg class="w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+            Follow-up frequency depends on your treatment plan. Typically, patients have a check-in within the first few weeks of starting treatment, then at regular intervals determined by your prescriber. Between appointments, our support team is always available by phone or email.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-border overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="font-heading font-semibold text-primary pr-4">Can I contact someone between appointments?</h3>
+            <svg class="w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+            Absolutely. Our dedicated support team is available by phone and email for any questions or concerns between scheduled appointments. You are never left in the dark — this is a core part of the Velora HealthConnect difference.
+          </div>
+        </details>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ===== CTA ===== -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-[oklch(0.965_0.01_230)] to-[oklch(0.96_0.015_175)]">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+        Ready to take the first step?
+      </h2>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        Submit your enquiry today and our team will be in touch to guide you through the process. No obligation, no pressure — just trusted medical guidance.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" data-slot="button" data-variant="default" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-sm relative overflow-hidden">
+          Start Your Enquiry
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+        <a href="tel:1300835672" data-slot="button" data-variant="outline" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full border border-border/60 bg-background px-8 text-sm font-semibold relative overflow-hidden">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          Call {site.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

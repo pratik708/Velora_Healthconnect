@@ -1,0 +1,13 @@
+---
+import { SheetFooter as ReactSheetFooter } from "@/components/ui/sheet";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetFooter client:load className={className} {...rest}>
+  <slot />
+</ReactSheetFooter>

@@ -1,0 +1,14 @@
+---
+import { SelectTrigger as ReactSelectTrigger } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+  size?: "sm" | "default";
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactSelectTrigger>

@@ -1,0 +1,13 @@
+---
+import { SheetTitle as ReactSheetTitle } from "@/components/ui/sheet";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetTitle client:load className={className} {...rest}>
+  <slot />
+</ReactSheetTitle>

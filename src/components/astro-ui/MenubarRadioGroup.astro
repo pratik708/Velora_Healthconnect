@@ -1,0 +1,14 @@
+---
+import { MenubarRadioGroup as ReactMenubarRadioGroup } from "@/components/ui/menubar";
+
+interface Props {
+  value?: string;
+  onValueChange?: (value: string) => void;
+}
+
+const props = Astro.props;
+---
+
+<ReactMenubarRadioGroup client:visible {...props}>
+  <slot />
+</ReactMenubarRadioGroup>

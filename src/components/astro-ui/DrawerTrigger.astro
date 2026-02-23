@@ -1,0 +1,14 @@
+---
+import { DrawerTrigger as ReactDrawerTrigger } from "@/components/ui/drawer";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDrawerTrigger client:load className={className} {...rest}>
+  <slot />
+</ReactDrawerTrigger>

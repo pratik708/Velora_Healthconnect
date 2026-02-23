@@ -1,0 +1,24 @@
+---
+import {
+  TabsList as ReactTabsList,
+  type tabsListVariants,
+} from "@/components/ui/tabs";
+import type { VariantProps } from "class-variance-authority";
+
+type TabsListVariants = VariantProps<typeof tabsListVariants>;
+
+interface Props extends TabsListVariants {
+  class?: string;
+}
+
+const { class: className, variant, ...props } = Astro.props;
+---
+
+<ReactTabsList
+  client:visible
+  className={className}
+  variant={variant}
+  {...props}
+>
+  <slot />
+</ReactTabsList>

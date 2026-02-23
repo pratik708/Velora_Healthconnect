@@ -1,0 +1,37 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { site } from "@/data/site";
+---
+
+<PageLayout
+  title="Thank You"
+  description="Your message has been sent successfully. Our team will review your enquiry and get back to you shortly."
+  robots="noindex, nofollow"
+>
+  <section class="py-32">
+    <div class="mx-auto max-w-2xl px-4 text-center">
+      <h1 class="text-4xl font-semibold tracking-tight lg:text-5xl">
+        Thank you
+      </h1>
+      <p class="mt-4 leading-snug font-medium text-muted-foreground">
+        Your message has been sent successfully. We'll be in touch shortly.
+      </p>
+      <div
+        class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+      >
+        <a
+          href="/"
+          class="inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
+        >
+          Back to home
+        </a>
+        <a
+          href={`tel:${site.contact.phone}`}
+          class="inline-flex h-10 items-center justify-center rounded-full border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
+        >
+          Call us: {site.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

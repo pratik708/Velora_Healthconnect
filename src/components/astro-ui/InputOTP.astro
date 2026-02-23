@@ -1,0 +1,33 @@
+---
+import { InputOTP as ReactInputOTP } from "@/components/ui/input-otp";
+
+interface Props {
+  class?: string;
+  containerClass?: string;
+  maxLength: number;
+  pattern?: string;
+  disabled?: boolean;
+  pushPasswordManagerStrategy?: "increase-width" | "none";
+}
+
+const {
+  class: className,
+  containerClass,
+  maxLength,
+  pattern,
+  disabled,
+  pushPasswordManagerStrategy,
+} = Astro.props;
+---
+
+<ReactInputOTP
+  client:visible
+  className={className}
+  containerClassName={containerClass}
+  maxLength={maxLength}
+  pattern={pattern}
+  disabled={disabled}
+  pushPasswordManagerStrategy={pushPasswordManagerStrategy}
+>
+  <slot />
+</ReactInputOTP>

@@ -1,0 +1,15 @@
+---
+import { ContextMenu as ReactContextMenu } from "@/components/ui/context-menu";
+
+interface Props {
+  onOpenChange?: (open: boolean) => void;
+  dir?: "ltr" | "rtl";
+  modal?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactContextMenu client:visible {...props}>
+  <slot />
+</ReactContextMenu>

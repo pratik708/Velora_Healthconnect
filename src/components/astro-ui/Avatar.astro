@@ -1,0 +1,37 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  class?: string;
+  src?: string;
+  alt?: string;
+  fallback?: string;
+}
+
+const { class: className, src, alt = "", fallback } = Astro.props;
+const initials =
+  fallback ||
+  alt
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+---
+
+<span
+  class={cn(
+    "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full",
+    className,
+  )}
+>
+  {
+    src ? (
+      <img src={src} alt={alt} class="aspect-square h-full w-full" />
+    ) : (
+      <span class="flex h-full w-full items-center justify-center rounded-full bg-muted text-sm font-medium">
+        {initials}
+      </span>
+    )
+  }
+</span>

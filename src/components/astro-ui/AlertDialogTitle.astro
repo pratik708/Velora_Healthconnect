@@ -1,0 +1,13 @@
+---
+import { AlertDialogTitle as ReactAlertDialogTitle } from "@/components/ui/alert-dialog";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactAlertDialogTitle client:load className={className} {...rest}>
+  <slot />
+</ReactAlertDialogTitle>

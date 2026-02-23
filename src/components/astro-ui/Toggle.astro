@@ -1,0 +1,26 @@
+---
+import { Toggle as ReactToggle } from "@/components/ui/toggle";
+import type { VariantProps } from "class-variance-authority";
+import { toggleVariants } from "@/components/ui/toggle";
+
+type ToggleVariants = VariantProps<typeof toggleVariants>;
+
+interface Props extends ToggleVariants {
+  class?: string;
+  defaultPressed?: boolean;
+  pressed?: boolean;
+  disabled?: boolean;
+}
+
+const { class: className, variant, size, ...props } = Astro.props;
+---
+
+<ReactToggle
+  client:visible
+  className={className}
+  variant={variant}
+  size={size}
+  {...props}
+>
+  <slot />
+</ReactToggle>

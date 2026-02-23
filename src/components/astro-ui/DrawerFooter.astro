@@ -1,0 +1,13 @@
+---
+import { DrawerFooter as ReactDrawerFooter } from "@/components/ui/drawer";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDrawerFooter client:load className={className} {...rest}>
+  <slot />
+</ReactDrawerFooter>

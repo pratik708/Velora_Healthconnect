@@ -1,0 +1,13 @@
+---
+import { NavigationMenuList as ReactNavigationMenuList } from "@/components/ui/navigation-menu";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactNavigationMenuList client:visible className={className} {...rest}>
+  <slot />
+</ReactNavigationMenuList>

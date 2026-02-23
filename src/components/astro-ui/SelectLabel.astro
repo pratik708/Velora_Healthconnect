@@ -1,0 +1,13 @@
+---
+import { SelectLabel as ReactSelectLabel } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectLabel client:visible className={className} {...props}>
+  <slot />
+</ReactSelectLabel>

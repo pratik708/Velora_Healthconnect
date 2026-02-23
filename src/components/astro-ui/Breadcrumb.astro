@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<nav
+  aria-label="breadcrumb"
+  data-slot="breadcrumb"
+  class={className}
+  {...props}
+>
+  <slot />
+</nav>

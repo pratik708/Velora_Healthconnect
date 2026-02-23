@@ -1,0 +1,15 @@
+---
+import { ContextMenuTrigger as ReactContextMenuTrigger } from "@/components/ui/context-menu";
+
+interface Props {
+  asChild?: boolean;
+  disabled?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuTrigger client:visible className={className} {...rest}>
+  <slot />
+</ReactContextMenuTrigger>

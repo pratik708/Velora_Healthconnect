@@ -1,0 +1,24 @@
+---
+import { MenubarContent as ReactMenubarContent } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  align?: "start" | "center" | "end";
+  alignOffset?: number;
+  sideOffset?: number;
+  avoidCollisions?: boolean;
+  collisionBoundary?: Element | Element[] | null;
+  collisionPadding?:
+    | number
+    | { top?: number; right?: number; bottom?: number; left?: number };
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+  forceMount?: true;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarContent client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarContent>

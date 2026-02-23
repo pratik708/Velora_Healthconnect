@@ -1,0 +1,11 @@
+---
+import { ContextMenuSeparator as ReactContextMenuSeparator } from "@/components/ui/context-menu";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactContextMenuSeparator client:visible className={className} {...rest} />

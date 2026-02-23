@@ -1,0 +1,24 @@
+---
+import { CarouselNext as ReactCarouselNext } from "@/components/ui/carousel";
+
+interface Props {
+  class?: string;
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+}
+
+const { class: className, variant = "outline", size = "icon" } = Astro.props;
+---
+
+<ReactCarouselNext
+  client:visible
+  className={className}
+  variant={variant}
+  size={size}
+/>

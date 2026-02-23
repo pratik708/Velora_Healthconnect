@@ -1,0 +1,18 @@
+---
+import { CommandItem as ReactCommandItem } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+  value?: string;
+  keywords?: string[];
+  onSelect?: (value: string) => void;
+  disabled?: boolean;
+  forceMount?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandItem client:visible className={className} {...rest}>
+  <slot />
+</ReactCommandItem>

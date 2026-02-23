@@ -1,0 +1,17 @@
+---
+import { Drawer as ReactDrawer } from "@/components/ui/drawer";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  modal?: boolean;
+  direction?: "top" | "bottom" | "left" | "right";
+  shouldScaleBackground?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactDrawer client:load {...props}>
+  <slot />
+</ReactDrawer>

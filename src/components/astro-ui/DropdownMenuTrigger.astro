@@ -1,0 +1,14 @@
+---
+import { DropdownMenuTrigger as ReactDropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuTrigger client:visible className={className} {...rest}>
+  <slot />
+</ReactDropdownMenuTrigger>

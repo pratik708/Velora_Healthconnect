@@ -1,0 +1,9 @@
+---
+import { DropdownMenuGroup as ReactDropdownMenuGroup } from "@/components/ui/dropdown-menu";
+
+const props = Astro.props;
+---
+
+<ReactDropdownMenuGroup client:visible {...props}>
+  <slot />
+</ReactDropdownMenuGroup>

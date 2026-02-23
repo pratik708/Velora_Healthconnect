@@ -1,0 +1,11 @@
+---
+import { MenubarSeparator as ReactMenubarSeparator } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarSeparator client:visible className={className} {...rest} />

@@ -1,0 +1,15 @@
+---
+import { Popover as ReactPopover } from "@/components/ui/popover";
+
+interface Props {
+  defaultOpen?: boolean;
+  open?: boolean;
+  modal?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactPopover client:visible {...props}>
+  <slot />
+</ReactPopover>

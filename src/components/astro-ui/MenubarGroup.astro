@@ -1,0 +1,9 @@
+---
+import { MenubarGroup as ReactMenubarGroup } from "@/components/ui/menubar";
+
+const props = Astro.props;
+---
+
+<ReactMenubarGroup client:visible {...props}>
+  <slot />
+</ReactMenubarGroup>

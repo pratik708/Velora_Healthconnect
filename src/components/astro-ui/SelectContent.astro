@@ -1,0 +1,17 @@
+---
+import { SelectContent as ReactSelectContent } from "@/components/ui/select";
+
+interface Props {
+  class?: string;
+  position?: "item-aligned" | "popper";
+  align?: "start" | "center" | "end";
+  side?: "top" | "right" | "bottom" | "left";
+  sideOffset?: number;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactSelectContent client:visible className={className} {...props}>
+  <slot />
+</ReactSelectContent>

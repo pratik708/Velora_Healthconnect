@@ -1,0 +1,15 @@
+---
+import { Dialog as ReactDialog } from "@/components/ui/dialog";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  modal?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactDialog client:load {...props}>
+  <slot />
+</ReactDialog>

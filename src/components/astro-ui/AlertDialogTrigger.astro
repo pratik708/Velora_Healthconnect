@@ -1,0 +1,14 @@
+---
+import { AlertDialogTrigger as ReactAlertDialogTrigger } from "@/components/ui/alert-dialog";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactAlertDialogTrigger client:load className={className} {...rest}>
+  <slot />
+</ReactAlertDialogTrigger>

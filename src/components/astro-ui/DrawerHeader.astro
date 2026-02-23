@@ -1,0 +1,13 @@
+---
+import { DrawerHeader as ReactDrawerHeader } from "@/components/ui/drawer";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDrawerHeader client:load className={className} {...rest}>
+  <slot />
+</ReactDrawerHeader>

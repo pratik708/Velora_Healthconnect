@@ -1,0 +1,14 @@
+---
+import { RadioGroupItem as ReactRadioGroupItem } from "@/components/ui/radio-group";
+
+interface Props {
+  class?: string;
+  value: string;
+  disabled?: boolean;
+  id?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactRadioGroupItem client:visible className={className} {...props} />

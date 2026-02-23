@@ -1,0 +1,13 @@
+---
+import { DrawerTitle as ReactDrawerTitle } from "@/components/ui/drawer";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDrawerTitle client:load className={className} {...rest}>
+  <slot />
+</ReactDrawerTitle>

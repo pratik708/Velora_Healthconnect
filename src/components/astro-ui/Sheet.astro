@@ -1,0 +1,15 @@
+---
+import { Sheet as ReactSheet } from "@/components/ui/sheet";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  modal?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactSheet client:load {...props}>
+  <slot />
+</ReactSheet>

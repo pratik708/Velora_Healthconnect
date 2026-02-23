@@ -1,0 +1,15 @@
+---
+import { MenubarSub as ReactMenubarSub } from "@/components/ui/menubar";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const props = Astro.props;
+---
+
+<ReactMenubarSub client:visible {...props}>
+  <slot />
+</ReactMenubarSub>

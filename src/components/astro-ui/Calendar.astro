@@ -1,0 +1,44 @@
+---
+import { Calendar as ReactCalendar } from "@/components/ui/calendar";
+
+interface Props {
+  class?: string;
+  mode?: "single" | "multiple" | "range";
+  showOutsideDays?: boolean;
+  captionLayout?: "label" | "dropdown" | "dropdown-months" | "dropdown-years";
+  numberOfMonths?: number;
+  disabled?: boolean;
+  required?: boolean;
+  buttonVariant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
+}
+
+const {
+  class: className,
+  mode = "single",
+  showOutsideDays = true,
+  captionLayout = "label",
+  numberOfMonths = 1,
+  disabled,
+  required,
+  buttonVariant = "ghost",
+} = Astro.props;
+
+const calendarProps: any = {
+  className,
+  mode,
+  showOutsideDays,
+  captionLayout,
+  numberOfMonths,
+  disabled,
+  required,
+  buttonVariant,
+};
+---
+
+<ReactCalendar client:visible {...calendarProps} />

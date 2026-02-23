@@ -1,0 +1,16 @@
+---
+import { CommandGroup as ReactCommandGroup } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+  heading?: string;
+  value?: string;
+  forceMount?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandGroup client:visible className={className} {...rest}>
+  <slot />
+</ReactCommandGroup>

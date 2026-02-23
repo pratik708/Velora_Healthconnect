@@ -1,0 +1,14 @@
+---
+import { ContextMenuPortal as ReactContextMenuPortal } from "@/components/ui/context-menu";
+
+interface Props {
+  container?: HTMLElement;
+  forceMount?: true;
+}
+
+const props = Astro.props;
+---
+
+<ReactContextMenuPortal client:visible {...props}>
+  <slot />
+</ReactContextMenuPortal>

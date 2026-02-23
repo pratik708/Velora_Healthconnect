@@ -1,0 +1,19 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  class?: string;
+  ratio?: number;
+}
+
+const { class: className, ratio = 16 / 9 } = Astro.props;
+---
+
+<div
+  class={cn("relative w-full", className)}
+  style={`padding-bottom: ${100 / ratio}%`}
+>
+  <div class="absolute inset-0">
+    <slot />
+  </div>
+</div>

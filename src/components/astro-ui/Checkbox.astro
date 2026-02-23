@@ -1,0 +1,18 @@
+---
+import { Checkbox as ReactCheckbox } from "@/components/ui/checkbox";
+
+interface Props {
+  id?: string;
+  name?: string;
+  value?: string;
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  required?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactCheckbox client:visible className={className} {...props} />

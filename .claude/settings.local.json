@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(pnpm dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npx pnpm install:*)"
+    ]
+  }
+}

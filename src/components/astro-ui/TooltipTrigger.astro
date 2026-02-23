@@ -1,0 +1,14 @@
+---
+import { TooltipTrigger as ReactTooltipTrigger } from "@/components/ui/tooltip";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactTooltipTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactTooltipTrigger>

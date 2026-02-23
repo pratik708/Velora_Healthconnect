@@ -1,0 +1,11 @@
+---
+import { SelectValue as ReactSelectValue } from "@/components/ui/select";
+
+interface Props {
+  placeholder?: string;
+}
+
+const props = Astro.props;
+---
+
+<ReactSelectValue client:visible {...props} />

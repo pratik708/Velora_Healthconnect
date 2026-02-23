@@ -1,0 +1,14 @@
+---
+import { MenubarPortal as ReactMenubarPortal } from "@/components/ui/menubar";
+
+interface Props {
+  container?: HTMLElement;
+  forceMount?: true;
+}
+
+const props = Astro.props;
+---
+
+<ReactMenubarPortal client:visible {...props}>
+  <slot />
+</ReactMenubarPortal>

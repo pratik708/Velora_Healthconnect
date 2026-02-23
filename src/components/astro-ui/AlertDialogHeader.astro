@@ -1,0 +1,13 @@
+---
+import { AlertDialogHeader as ReactAlertDialogHeader } from "@/components/ui/alert-dialog";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactAlertDialogHeader client:load className={className} {...rest}>
+  <slot />
+</ReactAlertDialogHeader>

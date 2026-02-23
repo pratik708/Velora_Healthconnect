@@ -1,0 +1,13 @@
+---
+import { PopoverHeader as ReactPopoverHeader } from "@/components/ui/popover";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactPopoverHeader client:visible className={className} {...props}>
+  <slot />
+</ReactPopoverHeader>

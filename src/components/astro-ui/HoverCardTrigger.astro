@@ -1,0 +1,14 @@
+---
+import { HoverCardTrigger as ReactHoverCardTrigger } from "@/components/ui/hover-card";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactHoverCardTrigger client:visible className={className} {...props}>
+  <slot />
+</ReactHoverCardTrigger>

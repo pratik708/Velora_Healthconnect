@@ -1,0 +1,16 @@
+---
+import { Tabs as ReactTabs } from "@/components/ui/tabs";
+
+interface Props {
+  defaultValue?: string;
+  value?: string;
+  orientation?: "horizontal" | "vertical";
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactTabs client:visible className={className} {...props}>
+  <slot />
+</ReactTabs>

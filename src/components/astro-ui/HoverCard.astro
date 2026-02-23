@@ -1,0 +1,16 @@
+---
+import { HoverCard as ReactHoverCard } from "@/components/ui/hover-card";
+
+interface Props {
+  defaultOpen?: boolean;
+  open?: boolean;
+  openDelay?: number;
+  closeDelay?: number;
+}
+
+const props = Astro.props;
+---
+
+<ReactHoverCard client:visible {...props}>
+  <slot />
+</ReactHoverCard>

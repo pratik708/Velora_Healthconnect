@@ -1,0 +1,14 @@
+---
+import { MenubarLabel as ReactMenubarLabel } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  inset?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarLabel client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarLabel>

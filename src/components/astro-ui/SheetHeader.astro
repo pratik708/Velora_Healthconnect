@@ -1,0 +1,13 @@
+---
+import { SheetHeader as ReactSheetHeader } from "@/components/ui/sheet";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetHeader client:load className={className} {...rest}>
+  <slot />
+</ReactSheetHeader>

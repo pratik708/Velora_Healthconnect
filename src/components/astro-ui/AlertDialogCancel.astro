@@ -1,0 +1,21 @@
+---
+import { AlertDialogCancel as ReactAlertDialogCancel } from "@/components/ui/alert-dialog";
+
+interface Props {
+  class?: string;
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactAlertDialogCancel client:load className={className} {...rest}>
+  <slot />
+</ReactAlertDialogCancel>

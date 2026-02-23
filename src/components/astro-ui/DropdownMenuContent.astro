@@ -1,0 +1,25 @@
+---
+import { DropdownMenuContent as ReactDropdownMenuContent } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  class?: string;
+  sideOffset?: number;
+  side?: "top" | "right" | "bottom" | "left";
+  align?: "start" | "center" | "end";
+  alignOffset?: number;
+  avoidCollisions?: boolean;
+  collisionBoundary?: Element | Element[] | null;
+  collisionPadding?:
+    | number
+    | { top?: number; right?: number; bottom?: number; left?: number };
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+  forceMount?: true;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuContent client:visible className={className} {...rest}>
+  <slot />
+</ReactDropdownMenuContent>

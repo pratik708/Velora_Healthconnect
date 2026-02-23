@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 48" fill="none">
+  <!-- V icon with heart/pulse -->
+  <g>
+    <!-- Subtle circle background -->
+    <circle cx="20" cy="24" r="19" fill="#2d9e8f" opacity="0.08"/>
+    <!-- V shape -->
+    <path d="M10 10L20 38L30 10" stroke="#2d9e8f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Heart pulse line inside V -->
+    <path d="M13 22L16 22L17.5 17L20 29L22.5 17L24 22L27 22" stroke="#2d9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Velora text -->
+  <text x="46" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="26" fill="#1a2a3a" letter-spacing="-0.5">Velora</text>
+  <!-- HealthConnect text -->
+  <text x="146" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="26" fill="#1a2a3a" letter-spacing="-0.5" opacity="0.55">Health</text>
+  <text x="245" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="26" fill="#2d9e8f" letter-spacing="-0.5">Connect</text>
+</svg>

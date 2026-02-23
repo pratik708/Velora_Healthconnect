@@ -1,0 +1,16 @@
+---
+import { DropdownMenuSubTrigger as ReactDropdownMenuSubTrigger } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  class?: string;
+  inset?: boolean;
+  disabled?: boolean;
+  textValue?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuSubTrigger client:visible className={className} {...rest}>
+  <slot />
+</ReactDropdownMenuSubTrigger>

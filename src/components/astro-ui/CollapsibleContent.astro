@@ -1,0 +1,13 @@
+---
+import { CollapsibleContent as ReactCollapsibleContent } from "@/components/ui/collapsible";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactCollapsibleContent client:visible className={className} {...props}>
+  <slot />
+</ReactCollapsibleContent>

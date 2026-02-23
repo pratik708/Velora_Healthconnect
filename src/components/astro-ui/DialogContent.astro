@@ -1,0 +1,14 @@
+---
+import { DialogContent as ReactDialogContent } from "@/components/ui/dialog";
+
+interface Props {
+  class?: string;
+  showCloseButton?: boolean;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDialogContent client:load className={className} {...rest}>
+  <slot />
+</ReactDialogContent>

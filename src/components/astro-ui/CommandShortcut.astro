@@ -1,0 +1,13 @@
+---
+import { CommandShortcut as ReactCommandShortcut } from "@/components/ui/command";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactCommandShortcut client:visible className={className} {...rest}>
+  <slot />
+</ReactCommandShortcut>

@@ -1,0 +1,13 @@
+---
+import FooterContent from "@components/footer.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["mt-auto", className]}>
+  <FooterContent />
+</div>

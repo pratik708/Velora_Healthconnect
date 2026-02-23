@@ -1,0 +1,16 @@
+---
+import { TooltipContent as ReactTooltipContent } from "@/components/ui/tooltip";
+
+interface Props {
+  side?: "top" | "right" | "bottom" | "left";
+  sideOffset?: number;
+  align?: "start" | "center" | "end";
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<ReactTooltipContent client:visible className={className} {...props}>
+  <slot />
+</ReactTooltipContent>

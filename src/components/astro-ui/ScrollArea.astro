@@ -1,0 +1,13 @@
+---
+import { ScrollArea as ReactScrollArea } from "@/components/ui/scroll-area";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ReactScrollArea client:visible className={className}>
+  <slot />
+</ReactScrollArea>

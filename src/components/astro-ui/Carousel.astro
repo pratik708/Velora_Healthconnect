@@ -1,0 +1,20 @@
+---
+import { Carousel as ReactCarousel } from "@/components/ui/carousel";
+
+interface Props {
+  class?: string;
+  orientation?: "horizontal" | "vertical";
+  opts?: Record<string, unknown>;
+}
+
+const { class: className, orientation = "horizontal", opts } = Astro.props;
+---
+
+<ReactCarousel
+  client:visible
+  className={className}
+  orientation={orientation}
+  opts={opts}
+>
+  <slot />
+</ReactCarousel>

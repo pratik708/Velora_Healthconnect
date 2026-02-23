@@ -1,0 +1,16 @@
+---
+import { DropdownMenu as ReactDropdownMenu } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+  modal?: boolean;
+  dir?: "ltr" | "rtl";
+}
+
+const props = Astro.props;
+---
+
+<ReactDropdownMenu client:visible {...props}>
+  <slot />
+</ReactDropdownMenu>

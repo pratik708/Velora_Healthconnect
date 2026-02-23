@@ -1,0 +1,14 @@
+---
+import { ContextMenuRadioGroup as ReactContextMenuRadioGroup } from "@/components/ui/context-menu";
+
+interface Props {
+  value?: string;
+  onValueChange?: (value: string) => void;
+}
+
+const props = Astro.props;
+---
+
+<ReactContextMenuRadioGroup client:visible {...props}>
+  <slot />
+</ReactContextMenuRadioGroup>

@@ -1,0 +1,14 @@
+---
+import { SheetClose as ReactSheetClose } from "@/components/ui/sheet";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetClose client:load className={className} {...rest}>
+  <slot />
+</ReactSheetClose>

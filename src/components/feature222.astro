@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { cn } from "@/lib/utils";
+import Button from "@components/astro-ui/Button.astro";
+
+interface Stat {
+  number: string;
+  text: string;
+}
+
+interface CardData {
+  title: string;
+  link: string;
+  image: ImageMetadata;
+  stats: Stat[];
+  cta?: string;
+}
+
+interface Props {
+  class?: string;
+  heading?: string;
+  description?: string;
+  cards?: CardData[];
+}
+
+const {
+  class: className,
+  heading = "Our Services",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+  cards = [],
+} = Astro.props;
+---
+
+<section class={cn("py-32", className)}>
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="mb-12 max-w-2xl">
+      <h2 class="text-3xl font-semibold tracking-tight lg:text-4xl">
+        {heading}
+      </h2>
+      <p class="mt-4 text-lg leading-snug text-muted-foreground">
+        {description}
+      </p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {
+        cards.map((card) => (
+          <a
+            href={card.link}
+            class="group relative min-h-auto w-full overflow-hidden rounded-[.5rem] p-5 transition-all duration-300 sm:aspect-square md:aspect-auto md:min-h-[30rem] md:max-w-[30rem]"
+          >
+            <Image
+              src={card.image}
+              alt=""
+              width={800}
+              widths={[400, 640, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              class="absolute inset-0 size-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/50 transition-all duration-300 group-hover:bg-black/30" />
+            <div class="relative z-10 flex size-full flex-col justify-between gap-20 md:gap-16">
+              <div class="text-xl leading-[1.2] font-normal text-white md:text-2xl">
+                {card.title}
+              </div>
+              <div class="flex w-full flex-col gap-8">
+                <div class="flex gap-8 text-white">
+                  {card.stats.map((stat) => (
+                    <div class="flex flex-col gap-1">
+                      <div class="text-[1.15rem] md:text-xl">{stat.number}</div>
+                      <div class="text-sm opacity-80">{stat.text}</div>
+                    </div>
+                  ))}
+                </div>
+                <Button variant="outline" size="sm" class="w-fit">
+                  {card.cta ?? "Learn More"}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="size-3.5"
+                  >
+                    <>
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </>
+                  </svg>
+                </Button>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

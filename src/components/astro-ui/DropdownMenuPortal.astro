@@ -1,0 +1,14 @@
+---
+import { DropdownMenuPortal as ReactDropdownMenuPortal } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  container?: HTMLElement;
+  forceMount?: true;
+}
+
+const props = Astro.props;
+---
+
+<ReactDropdownMenuPortal client:visible {...props}>
+  <slot />
+</ReactDropdownMenuPortal>

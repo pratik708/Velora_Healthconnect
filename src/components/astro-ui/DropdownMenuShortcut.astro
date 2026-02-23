@@ -1,0 +1,13 @@
+---
+import { DropdownMenuShortcut as ReactDropdownMenuShortcut } from "@/components/ui/dropdown-menu";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactDropdownMenuShortcut client:visible className={className} {...rest}>
+  <slot />
+</ReactDropdownMenuShortcut>

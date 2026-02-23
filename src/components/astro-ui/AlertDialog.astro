@@ -1,0 +1,14 @@
+---
+import { AlertDialog as ReactAlertDialog } from "@/components/ui/alert-dialog";
+
+interface Props {
+  open?: boolean;
+  defaultOpen?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<ReactAlertDialog client:load {...props}>
+  <slot />
+</ReactAlertDialog>

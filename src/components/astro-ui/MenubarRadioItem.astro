@@ -1,0 +1,17 @@
+---
+import { MenubarRadioItem as ReactMenubarRadioItem } from "@/components/ui/menubar";
+
+interface Props {
+  class?: string;
+  value: string;
+  disabled?: boolean;
+  onSelect?: (event: Event) => void;
+  textValue?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactMenubarRadioItem client:visible className={className} {...rest}>
+  <slot />
+</ReactMenubarRadioItem>

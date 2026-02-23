@@ -1,0 +1,13 @@
+---
+import { AlertDialogMedia as ReactAlertDialogMedia } from "@/components/ui/alert-dialog";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactAlertDialogMedia client:load className={className} {...rest}>
+  <slot />
+</ReactAlertDialogMedia>

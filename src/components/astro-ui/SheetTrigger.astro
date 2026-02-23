@@ -1,0 +1,14 @@
+---
+import { SheetTrigger as ReactSheetTrigger } from "@/components/ui/sheet";
+
+interface Props {
+  asChild?: boolean;
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ReactSheetTrigger client:load className={className} {...rest}>
+  <slot />
+</ReactSheetTrigger>

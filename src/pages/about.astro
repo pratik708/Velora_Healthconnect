@@ -1,0 +1,307 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/sections/Section.astro";
+import Button from "@components/astro-ui/Button.astro";
+import Badge from "@components/astro-ui/Badge.astro";
+
+---
+
+<PageLayout
+  title="About Us"
+  description="Learn about Velora HealthConnect, Australia's trusted telehealth provider for weight management, peptide therapy, and medical cannabis with genuine follow-up care."
+>
+  <!-- Hero -->
+  <section class="relative pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[oklch(0.965_0.01_230)] via-white to-[oklch(0.96_0.015_175)]"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <Badge variant="secondary" class="mb-6 bg-[oklch(0.92_0.03_175)] text-[oklch(0.30_0.06_175)]">
+        About Velora HealthConnect
+      </Badge>
+      <h1 class="font-heading text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl mb-6">
+        Healthcare that continues<br class="hidden sm:block" />
+        <span class="text-accent">after the prescription</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
+        We believe every patient deserves more than a one-off consultation. Velora HealthConnect was built on the principle that trusted guidance and proper follow-up care lead to real, lasting health outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <Section id="our-story" padding="lg">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">Our Story</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6">
+          Founded on a simple belief: patients deserve better care
+        </h2>
+        <div class="space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            Velora HealthConnect was founded by Toni Dibb after seeing a gap in the telehealth space. Too many providers were focused on the transaction, not the patient. Consultations were rushed, prescriptions were issued, and patients were left to figure out the rest on their own.
+          </p>
+          <p>
+            That approach did not sit right with us. Healthcare should be a relationship, not a transaction. Every patient who comes to Velora receives dedicated follow-up care, regular check-ins with their prescriber, and access to a real support team between appointments.
+          </p>
+          <p>
+            Operating Australia-wide via secure telehealth, we specialise in three areas where patients consistently told us they were underserved: weight management, peptide therapy, and medical cannabis. In each, the need for ongoing care is not just helpful but essential to achieving meaningful results.
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[oklch(0.92_0.03_175)] to-[oklch(0.95_0.02_230)] overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-accent/15">
+            <svg class="w-32 h-32" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Values -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-[oklch(0.975_0.005_230)] to-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">What Guides Us</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+          Our values shape every patient interaction
+        </h2>
+        <p class="text-lg text-muted-foreground">
+          These are not corporate slogans. They are the commitments we hold ourselves to every day.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Value 1 -->
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Trust First</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            We earn trust through transparency, compliance, and consistent care. Every treatment follows TGA regulations and AHPRA guidelines.
+          </p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Genuine Care</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            We treat patients as people, not ticket numbers. Our follow-up care model ensures nobody is left without support after their consultation.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Evidence-Based</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Every recommendation is grounded in clinical evidence. We do not make unsubstantiated claims or prescribe treatments without thorough assessment.
+          </p>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" /></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Accessible Nationwide</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Wherever you are in Australia, you can access quality healthcare through our secure telehealth platform. No travel, no waiting rooms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach / What Makes Us Different -->
+  <Section id="our-approach" padding="lg">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="order-2 lg:order-1 relative">
+        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[oklch(0.95_0.02_230)] to-[oklch(0.92_0.03_175)] overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-primary/10">
+            <svg class="w-32 h-32" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          </div>
+        </div>
+        <!-- Floating card -->
+        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-[oklch(0.922_0_0)]">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <p class="font-heading text-2xl font-bold text-primary">100%</p>
+              <p class="text-sm text-muted-foreground">Patient follow-up rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">Our Approach</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6">
+          The prescription is the beginning, not the end
+        </h2>
+        <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+          Most telehealth providers focus on getting patients through the consultation quickly. We take a different approach. Here is what every Velora patient receives:
+        </p>
+
+        <div class="space-y-5">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-primary mb-1">Scheduled Follow-Up Appointments</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Regular check-ins with your prescriber to review progress, adjust dosages, and address any concerns that arise.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-primary mb-1">Dedicated Support Team</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">A real team available by phone or email for questions between appointments. You are never left without support.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-primary mb-1">Ongoing Treatment Monitoring</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">We track your health outcomes over time and proactively adjust your care plan to ensure you are getting the best possible results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Services Overview -->
+  <section class="py-16 md:py-24 bg-primary">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-sm font-semibold text-[oklch(0.70_0.10_175)] uppercase tracking-wider mb-3">What We Offer</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">
+          Specialised telehealth across three key areas
+        </h2>
+        <p class="text-lg text-[oklch(0.70_0.03_230)]">
+          Each service area was chosen because patients consistently told us they were underserved by existing providers.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-[oklch(0.70_0.10_175)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Weight Management</h3>
+          <p class="text-[oklch(0.70_0.03_230)] text-sm leading-relaxed mb-4">
+            Clinically guided weight loss programs tailored to women 35 and over. Medically supervised, sustainable approaches with ongoing support.
+          </p>
+          <a href="/services/weight-management" class="inline-flex items-center text-sm font-semibold text-[oklch(0.70_0.10_175)] hover:text-[oklch(0.80_0.12_175)] transition-colors gap-2">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-[oklch(0.70_0.10_175)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Peptide Therapy</h3>
+          <p class="text-[oklch(0.70_0.03_230)] text-sm leading-relaxed mb-4">
+            Evidence-based peptide protocols for performance, recovery, anti-ageing, and general wellness. Suitable for fitness enthusiasts and wellness seekers.
+          </p>
+          <a href="/services/peptide-therapy" class="inline-flex items-center text-sm font-semibold text-[oklch(0.70_0.10_175)] hover:text-[oklch(0.80_0.12_175)] transition-colors gap-2">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-[oklch(0.70_0.10_175)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Medical Cannabis</h3>
+          <p class="text-[oklch(0.70_0.03_230)] text-sm leading-relaxed mb-4">
+            Prescribed access to medical cannabis for chronic pain and mental wellbeing. Compassionate, TGA-compliant care with ongoing monitoring.
+          </p>
+          <a href="/services/medical-cannabis" class="inline-flex items-center text-sm font-semibold text-[oklch(0.70_0.10_175)] hover:text-[oklch(0.80_0.12_175)] transition-colors gap-2">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance & Standards -->
+  <Section id="compliance" padding="lg">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-3">Compliance & Standards</p>
+      <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+        Your safety and privacy come first
+      </h2>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-12">
+        Velora HealthConnect operates in full compliance with Australian healthcare regulations. Every consultation, prescription, and patient interaction meets the highest standards.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="rounded-2xl border border-[oklch(0.922_0_0)] p-6">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary mb-2">TGA Compliance</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">All treatments and prescriptions follow Therapeutic Goods Administration regulations and approved pathways.</p>
+      </div>
+
+      <div class="rounded-2xl border border-[oklch(0.922_0_0)] p-6">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary mb-2">AHPRA Registered</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">All prescribers are registered with the Australian Health Practitioner Regulation Agency and hold current credentials.</p>
+      </div>
+
+      <div class="rounded-2xl border border-[oklch(0.922_0_0)] p-6">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary mb-2">Privacy Protected</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">Patient data is handled in strict accordance with the Australian Privacy Act. All consultations are conducted via secure, encrypted telehealth.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-[oklch(0.965_0.01_230)] to-[oklch(0.96_0.015_175)]">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
+        Ready to experience healthcare that cares?
+      </h2>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        Whether you are exploring weight management, peptide therapy, or medical cannabis, our team is here to guide you from the first consultation through ongoing follow-up care.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" data-slot="button" data-variant="default" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-sm relative overflow-hidden">
+          Book a Consultation
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+        <a href="tel:1300835672" data-slot="button" data-variant="outline" data-size="lg" class="group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-full border border-border/60 bg-background px-8 text-sm font-semibold relative overflow-hidden">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+          Call 1300 VELORA
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

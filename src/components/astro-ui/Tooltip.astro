@@ -1,0 +1,15 @@
+---
+import { Tooltip as ReactTooltip } from "@/components/ui/tooltip";
+
+interface Props {
+  defaultOpen?: boolean;
+  open?: boolean;
+  delayDuration?: number;
+}
+
+const props = Astro.props;
+---
+
+<ReactTooltip client:visible {...props}>
+  <slot />
+</ReactTooltip>

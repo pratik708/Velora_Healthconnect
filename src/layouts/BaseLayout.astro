@@ -1,0 +1,129 @@
+---
+import "../styles/global.css";
+import { Font } from "astro:assets";
+import { site } from "@/data/site";
+import { analytics } from "@/data/analytics";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  ogType?: string;
+  robots?: string;
+}
+
+const {
+  title,
+  description,
+  image = "/og-image.jpg",
+  canonical = Astro.url.href,
+  ogType = "website",
+  robots = "index, follow",
+} = Astro.props;
+
+const siteName = site.name;
+const siteTitle = title === siteName ? siteName : `${title} | ${siteName}`;
+const ogImageUrl = new URL(image, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={siteName} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <Font cssVariable="--font-outfit" preload />
+    <Font cssVariable="--font-dm-sans" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {analytics.gtmId && (
+      <script is:inline define:vars={{ gtmId: analytics.gtmId }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',gtmId);
+      </script>
+    )}
+
+    {!analytics.gtmId && analytics.ga4Id && (
+      <>
+        <script is:inline define:vars={{ ga4Id: analytics.ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+        <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${analytics.ga4Id}`} async></script>
+      </>
+    )}
+
+    {analytics.metaPixelId && (
+      <>
+        <script is:inline define:vars={{ pixelId: analytics.metaPixelId }}>
+          (function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){if(n.callMethod){
+          n.callMethod.apply(n,arguments)}else{n.queue.push(arguments)}};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)})(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', pixelId);
+          fbq('track', 'PageView');
+        </script>
+        <noscript>
+          <img height="1" width="1" style="display:none" alt=""
+            src={`https://www.facebook.com/tr?id=${analytics.metaPixelId}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+      </>
+    )}
+
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    {analytics.gtmId && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${analytics.gtmId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+          title="Google Tag Manager"
+        ></iframe>
+      </noscript>
+    )}
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-primary focus:p-4 focus:text-primary-foreground"
+    >
+      Skip to content
+    </a>
+    <slot />
+    <script>
+      import { captureUTMParams } from "@/lib/tracking";
+      captureUTMParams();
+    </script>
+  </body>
+</html>
