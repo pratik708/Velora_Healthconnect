@@ -6,7 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://velorahealthconnect.com.au",
+  site: "https://cjcoaustralia.github.io",
+  base: "/Velora-Healthconnect",
   compressHTML: true,
   build: {
     assets: "assets",
